@@ -232,11 +232,11 @@ function initFullScreen() {
     document.addEventListener("MSFullscreenChange", FShandler);
 
     $('#fullScreen').click(function () {
-        $('#containerMap').addClass('fullscreen');
+        $('#containerMap').addClass('fullScreen');
         fullScreen($('#containerMap')[0]);       
     });
     $('#exitFullScreen').click(function () {
-        $('#containerMap').removeClass('fullscreen');
+        $('#containerMap').removeClass('fullScreen');
         exitFullScreen();       
     });
 }
