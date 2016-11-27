@@ -298,7 +298,7 @@ function initFilters() {
 
 
 function init() {
-    if(document.getElementById('container')){
+    if(document.getElementById('containerMap')){
         var promises = [];
         initMap();
         initFullScreen();    
