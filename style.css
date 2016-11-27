@@ -185,10 +185,10 @@ div.autocomplete-suggestions{
     display: inline-block;
     margin-top: 4px;
     text-align: center;
-    font-size: 15px;
+    font-size: 12px;
 }
 .filter label img {
-    width: 30px;
+    width: 50px;
     display: block;
     margin: 0 auto;
     padding: 11px;
