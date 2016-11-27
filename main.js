@@ -188,8 +188,9 @@ function initMarkers(markers){
     }
     map.addLayer(featureGroup);
 }
-
+var fullScreen = false;
 function fullScreen(el) {
+    fullScreen = true;
     if (el.requestFullscreen) {
         el.requestFullscreen();
     } else if (el.webkitRequestFullscreen) {
@@ -202,6 +203,7 @@ function fullScreen(el) {
 }
 
 function exitFullScreen() {
+    fullScreen = false;
     if (document.exitFullscreen) {
         document.exitFullscreen();
     } else if (document.webkitExitFullscreen) {
@@ -215,10 +217,7 @@ function exitFullScreen() {
 
 
 function isFullScreen() {    
-    if( window.innerWidth == screen.width) {
-        return true;
-    }
-    return false;
+    return fullScreen;
 }
 function initFullScreen() {
     var FShandler = function(){
@@ -238,9 +237,11 @@ function initFullScreen() {
     document.addEventListener("MSFullscreenChange", FShandler);
 
     $('#fullScreen').click(function () {
+        $('#containerMap').addClass('fullscreen');
         fullScreen($('#containerMap')[0]);       
     });
     $('#exitFullScreen').click(function () {
+        $('#containerMap').removeClass('fullscreen');
         exitFullScreen();       
     });
 }
