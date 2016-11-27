@@ -193,13 +193,14 @@ div.autocomplete-suggestions{
     text-align: center;
     font-size: 12px;
 }
-.filter label img {
+#containerMap .filter label img {
     width: 50px;
     display: block;
-    margin: 0 auto;
+    margin: 0 auto !important;
+    background-color: transparent !important;
     padding: 11px;
 }
-.filter label img.selected {
+#containerMap .filter label img.selected {
     border: 5px solid #3b9217;
     border-radius: 5px;
     padding: 6px;
