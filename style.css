@@ -1,0 +1,384 @@
+@font-face {
+    font-family: 'webfont/league_spartanregular';
+    src: url('webfont/leaguespartan-bold-webfont.woff2') format('woff2'),
+         url('webfont/leaguespartan-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+body{
+    margin: 0; 
+    padding: 0;
+    font-family: 'league_spartanregular', Arial;
+}
+a, a:visited { color: #000; text-decoration: none;}
+.clearfix:after {
+   content: " "; /* Older browser do not support empty content */
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+
+#container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.hide{
+    display: none;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+}
+
+#map .marker span {
+    position: relative;
+    display: block;
+    background-size: contain;
+}
+#map .marker span.small {
+    width: 15px;
+    height: 15px;
+    margin-left: -4px;
+}
+#map .marker span.medium {
+    width: 20px;
+    height: 20px;
+    margin-left: -6px;
+}
+#map .marker span.large {
+    width: 25px;
+    height: 25px;
+    margin-left: -8px;
+}
+
+#map .marker span.green {
+    background-image: url('img/icono-planta-verde.png');
+}
+
+#map .marker span.red {
+    background-image: url('img/icono-planta-rojo.png');
+}
+
+#map .marker span.yellow {
+    background-image: url('img/icono-planta-amarillo.png');
+}
+
+#map .map-tooltip h3{
+    font-weight: bold;
+    font-size: 14pt;
+    text-align: center;
+    margin: 5px 0;
+}
+
+#map .map-tooltip span{
+    font-weight: bold;
+    font-size: 14px;
+}
+#map .map-tooltip span.date{
+    margin-left: 10px;
+}
+#map .map-tooltip span i{
+    margin-right: 10px;
+}
+#map .map-tooltip span.denied{
+    display: block;
+    color: #f00;
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: center;
+}
+#map .map-tooltip span.approved{
+    display: block;
+    color: #3b9217;
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: center;
+}
+#map .map-tooltip span.pending{
+    display: block;
+    color: #ffbf00;
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: center;
+}
+
+
+#exitFullScreen, #fullScreen{
+    position: absolute;
+    right: 255px;
+    top: 10px;
+    z-index: 1000;
+    font-size: 17px;
+    cursor: pointer;
+    background: #fff;
+    border-radius: 5px;
+    border: 1px solid #999;
+    height: 44px;
+    width: 44px;
+    box-shadow: 0 3px 14px rgba(0,0,0,0.4);
+}
+
+.autocomplete{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+    background: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #999;
+    width: 230px;
+    z-index: 10000;
+    box-shadow: 0 3px 14px rgba(0,0,0,0.4);
+}
+.autocomplete-suggestions { background: #FFF; overflow: auto; border: 0; width: 200px; }
+.autocomplete-suggestion { padding: 2px 0px; white-space: nowrap; overflow: hidden; cursor: pointer; font-size: 18px;}
+.autocomplete-selected { background: #F0F0F0; }
+.autocomplete-suggestions strong { font-weight: bold; }
+.autocomplete-group { padding: 2px 5px; }
+.autocomplete-group strong { display: block; border-bottom: 1px solid #000; }
+.autocomplete #removeAutocomplete{
+    border: none;
+    font-size: 17px;
+    background: #fff;
+    height: 100%;
+    cursor: pointer;
+    height: 30px;
+    width: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+div.autocomplete-suggestions{
+    margin-top: 6px;
+    width: 230px !important;
+    margin-left: -6px;
+    background: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #999;
+}
+
+.filter {
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    z-index: 1000;
+    background: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #999;
+    width: 230px;
+    box-shadow: 0 3px 14px rgba(0,0,0,0.4);
+}
+.filter input{
+    display: none;
+}
+.filter label {
+    width: 32%;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 4px;
+    text-align: center;
+    font-size: 15px;
+}
+.filter label img {
+    width: 30px;
+    display: block;
+    margin: 0 auto;
+    padding: 11px;
+}
+.filter label img.selected {
+    border: 5px solid #3b9217;
+    border-radius: 5px;
+    padding: 6px;
+}
+
+.detail {
+    width: 80%;
+    height: auto;
+    background: rgba(255,255,255,0.8);
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    z-index: 1010;
+    padding: 20px;
+    z-index: 11000;
+    box-shadow: 0 3px 14px rgba(0,0,0,0.4);
+}
+
+.detail .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 18px;
+}
+
+.detail .geo{
+    float: left;
+    width: 30%;
+    padding: 0px 10px;
+}
+.detail .gray{
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px 10px;
+    color: #fff;
+    font-weight: bold;
+    height: 360px;
+}
+.detail .gray div{
+    margin-bottom: 8px;
+
+}
+.detail .gray p{
+    font-weight: normal;
+    margin: 4px 0 0 0;
+
+}
+.detail .gray a{
+    text-decoration: underline;
+    color: #fff;
+
+}
+.detail .info{
+    float: left;
+    width: 66%;
+    padding-left: 1%;
+    overflow: hidden;
+}
+
+.detail .geo h3{
+    font-size: 20pt;
+    margin: 0;
+}
+.detail .geo h4{
+    font-size: 14pt;
+    margin: 10px 0 15px 0;
+}
+.detail .result{
+    font-size: 20pt;
+    position: relative;
+}
+.detail .result img{
+    height: 40px;
+    float: left;
+}
+.detail .result .info-header{
+    float: left;
+    padding-left: 10px;
+}
+.detail .result .info-header .title{
+    font-weight: bold;
+}
+.detail .result .info-header .date{
+    font-weight: bold;
+    color: #555;
+}
+.detail .result .info-header .links{
+    font-size: 14pt;
+    margin-top: 10px;
+}
+.detail .result .info-header .links a{
+    color: #555;
+    text-decoration: underline;
+}
+.detail .points{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0;
+    display: inline;
+}
+.detail .points li{
+    display: block;
+    width: 33.333%;
+    text-align: center;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;
+    height: 200px;
+    float: left;
+    padding: 20px 10px;
+    font-weight: bold;
+    color: #fff;
+}
+.detail .points li a{
+    color: #fff;
+}
+.detail .points li a:hover{
+    color: #000;
+}
+.detail .points li.one{
+    background: #008c8c;
+}
+.detail .points li.two{
+    background: #d96d00;
+}
+.detail .points li.three{
+    background: #b2b200;
+}
+.detail .points li.four{
+    background: #a84a91;
+}
+.detail .points li.five{
+    background: #6480ac;
+}
+.detail .points li.six{
+    background: #eebb0b;
+}
+.detail .points li .number{
+    font-size: 42pt;
+    position: relative;
+    margin: 0;
+    padding: 0 0 10px;
+}
+.detail .points li .title{
+    font-size: 14pt;
+    text-transform: uppercase;
+}
+.detail .result .denied-text{
+    font-size: 14pt;
+}
+    
+
+
+@media screen and (max-width: 860px) {
+   .detail{
+       left: 5%;
+       background: rgba(255,255,255,1);
+       max-height: 80%;
+       overflow-y: auto;
+   }
+   .detail .geo{width: 100%;float: none;padding: 0;box-sizing: border-box;}
+   .detail .info{
+       width: 100%;
+       padding-left: 0;
+       overflow: hidden;
+       margin-top: 20px;
+   }
+   .detail .result{
+       font-size: 15pt;
+   }
+   .detail .result .info-header{
+       float: none;
+   }
+   .detail .result .info-header .title{
+       margin-left: 40px;
+   }
+   .detail .gray{
+       padding: 10px;
+       margin-top: 10px;
+   }
+   .detail .points li{
+       width: 50%;
+   }
+   .detail .points li .number{font-size: 22pt;}
+   .detail .points li .title{
+       font-size: 14pt;
+   }
+}
