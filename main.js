@@ -125,7 +125,7 @@ function initMarkers(markers){
             e.preventDefault();
             detailEl.remove();
         });
-        detailEl.appendTo('#container');
+        detailEl.appendTo('#containerMap');
     }
 
     var popUpTemplate = function (city) {
