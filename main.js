@@ -309,5 +309,4 @@ function init() {
         initFilters();
     }
 }
-
-init();
+$(document).ready(init);
