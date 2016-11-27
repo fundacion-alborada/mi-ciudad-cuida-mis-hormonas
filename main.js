@@ -238,7 +238,7 @@ function initFullScreen() {
     document.addEventListener("MSFullscreenChange", FShandler);
 
     $('#fullScreen').click(function () {
-        fullScreen($('#container')[0]);       
+        fullScreen($('#containerMap')[0]);       
     });
     $('#exitFullScreen').click(function () {
         exitFullScreen();       
