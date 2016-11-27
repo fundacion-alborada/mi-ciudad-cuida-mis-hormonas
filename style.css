@@ -111,6 +111,7 @@ a, a:visited { color: #000; text-decoration: none;}
 #exitFullScreen, #fullScreen{
     position: absolute;
     right: 255px;
+    color: #000;
     top: 10px;
     z-index: 1000;
     font-size: 17px;
@@ -136,7 +137,7 @@ a, a:visited { color: #000; text-decoration: none;}
     z-index: 10000;
     box-shadow: 0 3px 14px rgba(0,0,0,0.4);
 }
-.autocomplete-suggestions { background: #FFF; overflow: auto; border: 0; width: 200px; }
+.autocomplete-suggestions { background: #FFF; overflow: auto; border: 0; width: 200px; margin:0; color: #000; }
 .autocomplete-suggestion { padding: 2px 0px; white-space: nowrap; overflow: hidden; cursor: pointer; font-size: 18px;}
 .autocomplete-selected { background: #F0F0F0; }
 .autocomplete-suggestions strong { font-weight: bold; }
@@ -144,6 +145,7 @@ a, a:visited { color: #000; text-decoration: none;}
 .autocomplete-group strong { display: block; border-bottom: 1px solid #000; }
 .autocomplete #removeAutocomplete{
     border: none;
+    color:#000;
     font-size: 17px;
     background: #fff;
     height: 100%;
