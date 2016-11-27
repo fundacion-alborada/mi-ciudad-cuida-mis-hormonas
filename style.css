@@ -9,8 +9,9 @@
 #containerMap{
     margin: 0; 
     padding: 0;
-    font-family: 'league_spartanregular', Arial;
+    font-family: Arial;
     text-align: left;
+    line-height: normal;
 }
 #containerMap.fullScreen{
     width: 100%;
