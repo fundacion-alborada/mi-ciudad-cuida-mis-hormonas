@@ -279,6 +279,8 @@ div.autocomplete-suggestions{
 .detail .result img{
     height: 40px;
     float: left;
+    margin: 0 !important;
+    background-color: transparent !important;
 }
 .detail .result .info-header{
     float: left;
