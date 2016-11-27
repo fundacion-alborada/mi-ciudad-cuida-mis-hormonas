@@ -279,7 +279,7 @@ div.autocomplete-suggestions{
     font-size: 20pt;
     position: relative;
 }
-.detail .result img{
+#containerMap .detail .result img{
     height: 40px;
     float: left;
     margin: 0 !important;
