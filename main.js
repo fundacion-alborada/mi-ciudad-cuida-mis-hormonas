@@ -49,7 +49,7 @@ function drawCities(map, cities) {
     }
 }
 var map = null;
-var cityService = new CityService('rareq');
+var cityService = new CityService('ruthecor');
 var filters = {
     status: ['D', 'A', 'P']
 };
