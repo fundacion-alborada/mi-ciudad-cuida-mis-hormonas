@@ -16,6 +16,9 @@
 #containerMap a {
     text-decoration: none;
 }
+#containerMap #map .leaflet-pane img {
+    margin: 0 !important;
+}
 #containerMap.fullScreen{
     width: 100%;
     height: 100%;
