@@ -113,7 +113,8 @@ function initMarkers(markers){
         featureGroup.clearLayers();
     }
 
-    function showDetailCity(){
+    function showDetailCity(e){
+        e.preventDefault();
         map.closePopup();
         var city = this;      
         city.index = 1;  
