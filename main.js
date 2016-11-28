@@ -114,7 +114,9 @@ function initMarkers(markers){
     }
 
     function showDetailCity(e){
-        e.preventDefault();
+        if (e) {
+            e.preventDefault();
+        }
         map.closePopup();
         var city = this;      
         city.index = 1;  
