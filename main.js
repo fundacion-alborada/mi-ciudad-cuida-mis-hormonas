@@ -114,7 +114,7 @@ function initMarkers(markers){
     }
 
     function showDetailCity(e){
-        if (e) {
+        if (e && e.preventDefault) {
             e.preventDefault();
         }
         map.closePopup();
