@@ -155,9 +155,9 @@ function initMarkers(markers){
     for (var i = 0, length = cities.length; i < length; i++) {
         if (checkFilters(cities[i])) {
             var classes = [];
-            if (cities[i].num_hab < 50) {
+            if (cities[i].num_hab < 50000) {
                 classes.push('small');
-            } else if(cities[i].num_hab >= 50 && cities[i].num_hab < 500) {
+            } else if(cities[i].num_hab >= 50000 && cities[i].num_hab < 500000) {
                 classes.push('medium');
             } else {
                 classes.push('large');
