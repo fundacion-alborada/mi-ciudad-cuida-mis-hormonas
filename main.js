@@ -306,7 +306,7 @@ function init() {
             initMarkers(markers);
         });
         $.when.apply($, cityService.getCities()).then(function(cities, provinces, ccaas){
-            let result = cities[0].rows.concat(provinces[0].rows).concat(ccaas[0].rows);
+            var result = cities[0].rows.concat(provinces[0].rows).concat(ccaas[0].rows);
             initAutocomplete(result);
         });
         initFilters();
