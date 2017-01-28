@@ -1,7 +1,7 @@
 var CityService = function (username) {
     this.username = username;
     this.url = 'https://' + this.username + '.carto.com/api/v2/sql?q=';
-    this.queryPoints = 'select *, TO_CHAR(adherence_date,\'DD-MM-YYYY\') as adherence_date_format, TO_CHAR(adherence_date,\'DD-MM-YYYY\') as denied_date_format, ST_X(the_geom) as lng, ST_Y(the_geom) as lat from cities';
+    this.queryPoints = 'select *, TO_CHAR(adherence_date,\'DD-MM-YYYY\') as adherence_date_format, TO_CHAR(denied_date,\'DD-MM-YYYY\') as denied_date_format, ST_X(the_geom) as lng, ST_Y(the_geom) as lat from cities';
     this.querySpainCities = "SELECT distinct(nameunit) as name, cartodb_id, 'city' as type FROM ign_spanish_adm3_municipalities_displaced_canary where country = 'ES'";
     this.querySpainProvinces = "SELECT concat(nameunit, ' (Provincia)') as name, cartodb_id, 'province' as type FROM ign_spanish_adm2_provinces_displaced_canary where country = 'ES'";
     this.querySpainCCAA = "SELECT nameunit as name, cartodb_id, 'ccaa' as type FROM ign_spanish_adm1_ccaa_displaced_canary where country = 'ES'";
