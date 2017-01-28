@@ -139,7 +139,7 @@ function initMarkers(markers){
             '</div>';
         var el = $(tmpl);
         if (city.status === 'D') { // Denied 
-            el.append(`<span class="denied">Moción Rechazada el ${city.denied_date_format}</span>`);
+            el.append(`<span class="denied">Moción rechazada el ${city.denied_date_format}</span>`);
         } else if (city.status === 'P') { // Pending 
             el.append(`<span class="pending">Moción en trámite</span>`);
         } else if (city.status === 'A') { // Approved 
